@@ -83,11 +83,8 @@ export async function POST(req: NextRequest) {
                     30 * 1000
                 ),
 
-                inventory: {
-                  connect: {
-                    id: inventory.id,
-                  },
-                },
+                inventoryId:
+                  inventory.id,
               },
             });
 
