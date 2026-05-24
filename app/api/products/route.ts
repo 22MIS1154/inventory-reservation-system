@@ -19,7 +19,6 @@ export async function GET() {
 
     inventory: product.inventory.map((item: any) => ({
         warehouse: item.warehouse.name,
-
         totalStock: item.totalStock,
 
         reservedStock: item.reservedStock,
