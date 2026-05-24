@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
 
     const result =
       await prisma.$transaction(
-        async (tx) => {
+        async (tx: any) => {
           // Find inventory
           const inventory =
             await tx.inventory.findFirst({
