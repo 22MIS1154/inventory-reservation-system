@@ -70,16 +70,24 @@ export async function POST(req: NextRequest) {
             await tx.reservation.create({
               data: {
                 productId,
+
                 warehouseId:
                   inventory.warehouseId,
+
                 quantity: 1,
+
                 status: "PENDING",
 
-                // Reservation expires after 30 seconds
                 expiresAt: new Date(
                   Date.now() +
                     30 * 1000
                 ),
+
+                inventory: {
+                  connect: {
+                    id: inventory.id,
+                  },
+                },
               },
             });
 
