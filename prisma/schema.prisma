@@ -36,6 +36,9 @@ model Reservation {
   quantity     Int
   status       String   @default("RESERVED")
 
+  
+  expiresAt    DateTime
+
   productId    Int
   warehouseId  Int
   inventoryId  Int
