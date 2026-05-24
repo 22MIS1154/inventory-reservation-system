@@ -19,7 +19,7 @@ export async function POST(
 
     const result =
       await prisma.$transaction(
-        async (tx) => {
+        async (tx: any) => {
           // Find reservation
           const reservation =
             await tx.reservation.findUnique(
