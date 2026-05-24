@@ -13,10 +13,10 @@ export async function GET() {
       },
     });
 
-    const formattedProducts = products.map((product) => ({
+    const formattedProducts = products.map((product: any) => ({
       id: product.id,
       name: product.name,
-      inventory: product.inventory.map((item) => ({
+      inventory: product.inventory.map((item: any) => ({
         warehouse: item.warehouse.name,
         totalStock: item.totalStock,
         reservedStock: item.reservedStock,
